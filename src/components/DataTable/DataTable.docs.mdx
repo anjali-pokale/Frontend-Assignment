@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { DataTable } from './DataTable';
+
+<Meta title="Data Display/DataTable Docs" of={DataTable} />
+
+# DataTable — Anatomy & Guidance
+
+**Anatomy**
+- Wrap (`.dt-wrap`) — rounded surface with border
+- `<table role="table">`
+  - `<thead>` with clickable headers (`.dt-th.dt-sort`) and `aria-sort`
+  - `<tbody>` rows (`.dt-row`) with focus and `aria-selected` when selection enabled
+  - Optional checkbox cell (multiple selection)
+  - Loading row, Empty row
+
+**Props & API**  
+Generic: `DataTable<T>`  
+
+```ts
+type SortDirection = 'asc' | 'desc' | null;
+interface Column<T> {
+  header: string;
+  accessor: keyof T | ((row: T) => React.ReactNode | string | number);
+  id?: string;
+  sortable?: boolean;
+  sortFn?: (a: T, b: T) => number;
+  width?: string | number;
+  cell?: (row: T) => React.ReactNode;
+}
+interface DataTableProps<T> {
+  data: T[];
+  columns: Column<T>[];
+  loading?: boolean;
+  selectable?: boolean;
+  selectionMode?: 'single' | 'multiple';
+  onRowSelect?: (selectedRows: T[]) => void;
+  emptyMessage?: string;
+  ariaLabel?: string;
+}

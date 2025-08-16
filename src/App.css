@@ -1,0 +1,207 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+/* .app-container {
+  padding: 1rem;
+  position: relative;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ✅ Toggle bar at top right
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ✅ Light vs Dark toggle styling */
+[data-theme="dark"] .theme-toggle {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ✅ Force input borders always visible */
+input {
+  border: 1px solid var(--color-border) !important;
+  border-radius: 6px;
+  padding: 0.5rem;
+  width: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3);
+} */
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #222222;
+  --color-border: #cccccc;
+  --color-primary: #1976d2;
+}
+
+[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-text: #f5f5f5;
+  --color-border: #555555;
+  --color-primary: #90caf9;
+}
+
+/* ===== CONTAINER ===== */
+.app-container {
+  padding: 1rem;
+  position: relative;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== TOGGLE BAR ===== */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid var(--color-border);
+  background: var(--color-primary);
+  color: var(--color-bg);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode toggle looks reversed */
+[data-theme="dark"] .theme-toggle {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ===== INPUT STYLING ===== */
+input {
+  border: 1px solid var(--color-border) !important;
+  border-radius: 6px;
+  padding: 0.5rem;
+  width: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3);
+}
+
+/* Separate Layout Sections */ */
+ .form-section, .table-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  transition: all 0.3s ease;
+}
+
+/* Add Entry Button */
+.add-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #155a9c;
+}
+
+/* Dropdown (Status) */
+.input-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.select-input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+}

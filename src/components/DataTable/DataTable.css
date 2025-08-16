@@ -1,0 +1,86 @@
+.dt-wrap {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.dt-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dt-th, .dt-td {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.dt-th {
+  background: var(--surface);
+  user-select: none;
+}
+
+.dt-sort {
+  cursor: pointer;
+}
+
+.dt-row {
+  background: var(--bg);
+}
+.dt-row:hover { background: var(--surface); }
+
+.dt-row[aria-selected='true'] {
+  background: color-mix(in oklab, var(--accent) 12%, var(--bg));
+}
+
+.dt-empty, .dt-loading {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* skeleton */
+.skeleton {
+  height: 12px; border-radius: 6px; background: var(--skeleton); display: inline-block; min-width: 100px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+
+.dt-checkbox {
+  width: 16px; height: 16px;
+}
+
+.datatable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.datatable th,
+.datatable td {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.datatable th {
+  cursor: pointer;
+  background: var(--color-disabled);
+}
+
+.datatable tr:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.datatable-loading,
+.datatable-empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-text);
+}

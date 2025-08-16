@@ -1,69 +1,112 @@
-# React + TypeScript + Vite
+#Main files structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+react-ts-components/
+ ┣ src/
+ ┃ ┣ components/
+ ┃ ┃ ┣ InputField/
+ ┃ ┃ ┃ ┣ InputField.tsx
+ ┃ ┃ ┃ ┣ InputField.stories.tsx
+ ┃ ┃ ┃ ┗ InputField.css
+ ┃ ┃ ┣ DataTable/
+ ┃ ┃ ┃ ┣ DataTable.tsx
+ ┃ ┃ ┃ ┣ DataTable.stories.tsx
+ ┃ ┃ ┃ ┗ DataTable.css
+ ┃ ┣ App.tsx
+ ┃ ┣ App.css
+ ┃ ┗ main.tsx
+ ┣ .eslintrc.js
+ ┣ .prettierrc
+ ┣ package.json
+ ┣ tsconfig.json
+ ┣ vite.config.ts
+ ┣ README.md
+ ┗ yarn.lock / package-lock.json
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React + TypeScript Components with Storybook
+This project contains reusable UI components built with React + TypeScript and documented using Storybook.
+The components are designed with scalability, accessibility, and theming (Light/Dark mode) in mind.
 
-## Expanding the ESLint configuration
+✨ Features
+📥 InputField → Flexible input with validation states, helper/error text, clear button & password toggle.
+📊 DataTable → Display tabular data with sorting, selection, loading & empty states.
+🎨 Light / Dark Theme Toggle
+⚡ Modern React patterns with TypeScript
+📚 Storybook documentation with examples & best practices
+♿ Accessible (ARIA roles, keyboard navigation)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+📦 Components
+🔹 InputField
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Variants: filled, outlined, ghost
+Sizes: small, medium, large
+States: disabled, invalid, loading
+Extra: clear button, password toggle, helper text, error messages
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+🔹 DataTable
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Display dynamic data
+Column sorting
+Row selection (single/multiple)
+Loading & Empty states
+Configurable via columns and data props
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React  + TypeScript
+Vite (fast dev build tool)
+Storybook (UI documentation & playground)
+ESLint + Prettier (code quality & formatting)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⚙️ Getting Started
+1. Clone the repo
+git clone https://github.com/<your-username>/react-ts-components.git
+cd react-ts-components
+
+2. Install dependencies
+npm install
+
+3. Run the app
+npm run dev
+App runs on 👉 http://localhost:5173
+
+4. Run Storybook
+npm run storybook
+Storybook runs on 👉 http://localhost:6006
+
+🔹 Approach
+
+Scalable Project Structure
+
+Each component (InputField, DataTable) is placed in its own folder with .tsx, .stories.tsx, and optional .css files.
+This ensures reusability, readability, and separation of concerns.
+
+Component Design
+
+InputField: Built with props for flexible usage (label, placeholder, helperText, errorMessage, etc.).
+Supports variants (filled, outlined, ghost)
+Handles states (disabled, invalid, loading)
+Added clear button and password toggle for better UX.
+DataTable: Accepts data and columns props for dynamic rendering.
+Supports sorting, selection, empty/loading states.
+Rows are selectable (single/multi) and emit selected rows via callback.
+
+Theming
+
+Implemented Light/Dark mode toggle at the app level.
+Used CSS variables to manage background, text, border, and primary colors.
+Theme changes are instant across all components.
+
+Storybook Documentation
+
+Each component has its own Storybook entry.
+Stories cover variants, states, sizes, and interaction behaviors.
+Documented props API with TypeScript types.
+Added accessibility addon to validate ARIA roles and keyboard navigation.
+
+Best Practices
+
+Used TypeScript for type safety.
+Followed modern React patterns (useState, props-driven components).
+Ensured ARIA compliance for accessibility.
+Linted and formatted with ESLint + Prettier.
